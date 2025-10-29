@@ -2,17 +2,19 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, User, Award, Target, Users, Zap } from "lucide-react"
+import { Phone, Mail, User, Award, Target, Users, Zap, Linkedin } from "lucide-react"
 import FloatingContact from "@/components/floating-contact"
 import Chatbot from "@/components/chatbot"
+import Image from "next/image"
 
 const teamMembers = [
+  // ... (same as before, no change)
   {
     name: "Hira Pehare",
     role: "Founder & Director",
     phone: "9223350912",
     email: "hiraenterprises26@gmail.com",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/team/hira.jpeg",
     bio: "Visionary leader with extensive experience in civil engineering and project management. Drives the company's strategic direction and client relationships with over 15 years of industry expertise.",
     specialties: ["Strategic Planning", "Client Relations", "Project Oversight"],
   },
@@ -21,36 +23,46 @@ const teamMembers = [
     role: "Director",
     phone: "9223306882",
     email: "hiraenterprises26@gmail.com",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/team/manoj.jpeg",
     bio: "Expert in construction management and quality assurance. Oversees project execution and ensures adherence to industry standards with meticulous attention to detail.",
     specialties: ["Construction Management", "Quality Control", "Safety Standards"],
   },
   {
     name: "Omkar Pehare",
     role: "Project Lead",
-    phone: "9223350912",
+    phone: "9321424023",
     email: "hiracons@gmail.com",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/team/omkar.jpeg",
     bio: "Dynamic project leader specializing in interior design and client coordination. Ensures seamless project delivery and client satisfaction through innovative solutions.",
     specialties: ["Interior Design", "Project Coordination", "Client Management"],
   },
   {
     name: "Mandira Pardeshi",
     role: "Design Specialist",
-    phone: "9223350912",
+    phone: "8291388832",
     email: "hiraenterprises26@gmail.com",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/team/roshani.jpeg",
     bio: "Creative design specialist with expertise in architectural visualization and space planning. Brings innovative design concepts to life with modern aesthetics and functionality.",
     specialties: ["Architectural Design", "Space Planning", "3D Visualization"],
   },
+  {
+    name: "Hemant Pardeshi",
+    role: "Technical Marketing Specialist / Manager",
+    phone: "7385663619",
+    email: "hemantpardeshi683@gmail.com",
+    linkedin: "https://www.linkedin.com/in/hemant-pardeshi-a03581240?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    image: "/team/hemant.jpeg",
+    bio: "Results-driven technical marketing specialist skilled in bridging the gap between technology and customer needs. Expert in developing data-backed marketing strategies, product positioning, and digital campaign optimization to drive brand growth and engagement.",
+    specialties: ["Technical Marketing", "Digital Strategy", "Product Positioning", "Market Research", "Lead Generation", "B2B Marketing", "Data Analytics"]
+  }
 ]
 
 const companyValues = [
+  // ... (same)
   {
     icon: Award,
     title: "Excellence",
-    description:
-      "We strive for excellence in every project, ensuring the highest quality standards and client satisfaction.",
+    description: "We strive for excellence in every project, ensuring the highest quality standards and client satisfaction.",
     color: "text-dark-highlight",
   },
   {
@@ -99,73 +111,103 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Team Grid */}
+      {/* === FIXED TEAM GRID WITH FULLY VISIBLE 5TH CARD === */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            {teamMembers.map((member, index) => (
-              <Card
-                key={index}
-                className="glass border-light-primary/20 shadow-soft hover:shadow-soft-lg transition-all duration-500 group overflow-hidden"
-              >
-                <CardContent className="p-8">
-                  <div className="flex flex-col md:flex-row gap-6">
-                    {/* Profile Image */}
-                    <div className="flex-shrink-0">
-                      <div className="relative w-32 h-32 mx-auto md:mx-0 rounded-2xl overflow-hidden bg-gradient-to-br from-light-primary to-light-secondary p-1">
-                        <div className="w-full h-full rounded-xl overflow-hidden bg-light-background flex items-center justify-center">
-                          <User className="w-16 h-16 text-dark-highlight" />
+          <div className="grid md:grid-cols-2 gap-12 md:gap-x-16">
+            {teamMembers.map((member, index) => {
+              const isFifthMember = index === 4;
+
+              return (
+                <div
+                  key={index}
+                  className={`
+                    ${isFifthMember 
+                      ? 'md:col-span-2 flex justify-center' 
+                      : ''
+                    }
+                  `}
+                >
+                  <div className={isFifthMember ? 'w-full md:w-2/3 lg:w-1/2' : 'w-full'}>
+                    <Card className="glass border-light-primary/20 shadow-soft hover:shadow-soft-lg transition-all duration-500 group overflow-hidden h-full">
+                      <CardContent className="p-8">
+                        <div className="flex flex-col md:flex-row gap-6">
+                          <div className="flex-shrink-0">
+                            <div className="relative w-32 h-32 mx-auto md:mx-0 rounded-2xl overflow-hidden bg-gradient-to-br from-light-primary to-light-secondary p-1">
+                              {member.image ? (
+                                <Image
+                                  src={member.image}
+                                  alt={member.name}
+                                  width={128}
+                                  height={128}
+                                  className="w-full h-full object-cover rounded-xl"
+                                />
+                              ) : (
+                                <div className="w-full h-full rounded-xl bg-light-background flex items-center justify-center">
+                                  <User className="w-16 h-16 text-dark-highlight" />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="flex-1 text-center md:text-left">
+                            <h3 className="text-2xl font-bold text-dark-primary mb-2">{member.name}</h3>
+                            <p className="text-lg font-semibold text-dark-highlight mb-4">{member.role}</p>
+                            <p className="text-dark-secondary text-sm leading-relaxed mb-6">{member.bio}</p>
+
+                            <div className="mb-6">
+                              <h4 className="text-sm font-semibold text-dark-primary mb-3">Specialties:</h4>
+                              <div className="flex flex-wrap gap-2">
+                                {member.specialties.map((specialty, idx) => (
+                                  <span
+                                    key={idx}
+                                    className="px-3 py-1 bg-light-primary/20 text-dark-highlight text-xs font-medium rounded-full border border-light-primary/30"
+                                  >
+                                    {specialty}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row gap-3">
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                className="border-light-primary/40 text-dark-highlight hover:bg-light-primary/10 transition-all duration-300 flex items-center gap-2 rounded-xl bg-transparent"
+                                onClick={() => window.open(`tel:${member.phone}`)}
+                              >
+                                <Phone className="w-4 h-4" />
+                                {member.phone}
+                              </Button>
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                className="border-light-secondary/40 text-dark-highlight hover:bg-light-secondary/10 transition-all duration-300 flex items-center gap-2 rounded-xl bg-transparent"
+                                onClick={() => window.open(`mailto:${member.email}`)}
+                              >
+                                <Mail className="w-4 h-4" />
+                                Email
+                              </Button>
+                              {member.linkedin && (
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="border-blue-500/40 text-blue-600 hover:bg-blue-500/10 transition-all duration-300 flex items-center gap-2 rounded-xl bg-transparent"
+                                  onClick={() => window.open(member.linkedin, "_blank")}
+                                >
+                                  <Linkedin className="w-4 h-4" />
+                                  LinkedIn
+                                </Button>
+                              )}
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-
-                    {/* Member Info */}
-                    <div className="flex-1 text-center md:text-left">
-                      <h3 className="text-2xl font-bold text-dark-primary mb-2">{member.name}</h3>
-                      <p className="text-lg font-semibold text-dark-highlight mb-4">{member.role}</p>
-                      <p className="text-dark-secondary text-sm leading-relaxed mb-6">{member.bio}</p>
-
-                      {/* Specialties */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-semibold text-dark-primary mb-3">Specialties:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {member.specialties.map((specialty, idx) => (
-                            <span
-                              key={idx}
-                              className="px-3 py-1 bg-light-primary/20 text-dark-highlight text-xs font-medium rounded-full border border-light-primary/30"
-                            >
-                              {specialty}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Contact Buttons */}
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="border-light-primary/40 text-dark-highlight hover:bg-light-primary/10 transition-all duration-300 flex items-center gap-2 rounded-xl bg-transparent"
-                          onClick={() => window.open(`tel:${member.phone}`)}
-                        >
-                          <Phone className="w-4 h-4" />
-                          {member.phone}
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="border-light-secondary/40 text-dark-highlight hover:bg-light-secondary/10 transition-all duration-300 flex items-center gap-2 rounded-xl bg-transparent"
-                          onClick={() => window.open(`mailto:${member.email}`)}
-                        >
-                          <Mail className="w-4 h-4" />
-                          Email
-                        </Button>
-                      </div>
-                    </div>
+                      </CardContent>
+                    </Card>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

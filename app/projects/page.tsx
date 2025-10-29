@@ -41,8 +41,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2017",
       category: "Exterior",
       features: ["Structural Repair", "Waterproofing", "Exterior Painting"],
-      gradient: "from-blue-900 to-orange-700",
-      accentColor: "orange"
+      gradient: "from-blue-600 to-blue-800",
+      accentColor: "blue"
     },
     {
       id: 18,
@@ -54,8 +54,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2023",
       category: "Exterior",
       features: ["Waterproofing", "Polymer Treatment", "Painting"],
-      gradient: "from-blue-900 to-orange-700",
-      accentColor: "orange"
+      gradient: "from-blue-600 to-blue-800",
+      accentColor: "blue"
     },
     {
       id: 19,
@@ -67,8 +67,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2024",
       category: "Exterior",
       features: ["Terrace Waterproofing", "Exterior Painting", "Interior Painting"],
-      gradient: "from-blue-900 to-orange-700",
-      accentColor: "orange"
+      gradient: "from-blue-600 to-blue-800",
+      accentColor: "blue"
     },
     {
       id: 20,
@@ -80,8 +80,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2025",
       category: "Exterior",
       features: ["Structural Repair", "Terrace Waterproofing", "Painting"],
-      gradient: "from-blue-900 to-orange-700",
-      accentColor: "orange"
+      gradient: "from-blue-600 to-blue-800",
+      accentColor: "blue"
     },
     {
       id: 21,
@@ -93,8 +93,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2011",
       category: "Exterior",
       features: ["Crack Filling", "Patch Plaster", "Painting"],
-      gradient: "from-blue-900 to-orange-700",
-      accentColor: "orange"
+      gradient: "from-blue-600 to-blue-800",
+      accentColor: "blue"
     },
     {
       id: 22,
@@ -106,8 +106,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2009",
       category: "Exterior",
       features: ["Crack Filling", "Paver Flooring", "Exterior Painting"],
-      gradient: "from-blue-900 to-orange-700",
-      accentColor: "orange"
+      gradient: "from-blue-600 to-blue-800",
+      accentColor: "blue"
     },
     {
       id: 23,
@@ -119,8 +119,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2010",
       category: "Exterior",
       features: ["Crack Filling", "Exterior Painting"],
-      gradient: "from-blue-900 to-orange-700",
-      accentColor: "orange"
+      gradient: "from-blue-600 to-blue-800",
+      accentColor: "blue"
     },
     {
       id: 24,
@@ -132,8 +132,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2024",
       category: "Exterior",
       features: ["Water Tank Waterproofing", "Terrace Repair"],
-      gradient: "from-blue-900 to-orange-700",
-      accentColor: "orange"
+      gradient: "from-blue-600 to-blue-800",
+      accentColor: "blue"
     },
     {
       id: 25,
@@ -145,8 +145,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2014",
       category: "Exterior",
       features: ["Structural Repair", "Crack Filling", "Full Plaster", "Plumbing", "Painting", "PCC Koba"],
-      gradient: "from-blue-900 to-orange-700",
-      accentColor: "orange"
+      gradient: "from-blue-600 to-blue-800",
+      accentColor: "blue"
     }
   ],
   interior: [
@@ -160,8 +160,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2015",
       category: "Interior",
       features: ["Interior Fit-out", "Modern Amenities", "Space Planning"],
-      gradient: "from-blue-900 to-amber-700",
-      accentColor: "amber"
+      gradient: "from-blue-500 to-blue-700",
+      accentColor: "blue"
     },
     {
       id: 10,
@@ -173,8 +173,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2016",
       category: "Interior",
       features: ["Renovation", "Interior Design", "Multi-floor"],
-      gradient: "from-blue-900 to-amber-700",
-      accentColor: "amber"
+      gradient: "from-blue-500 to-blue-700",
+      accentColor: "blue"
     },
     {
       id: 11,
@@ -186,8 +186,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2016",
       category: "Interior",
       features: ["Office Design", "Space Planning", "Interior Fit-out"],
-      gradient: "from-blue-900 to-amber-700",
-      accentColor: "amber"
+      gradient: "from-blue-500 to-blue-700",
+      accentColor: "blue"
     },
     {
       id: 12,
@@ -199,8 +199,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2016",
       category: "Interior",
       features: ["Interior Fit-out", "Space Optimization", "Modern Design"],
-      gradient: "from-blue-900 to-amber-700",
-      accentColor: "amber"
+      gradient: "from-blue-500 to-blue-700",
+      accentColor: "blue"
     },
     {
       id: 13,
@@ -212,8 +212,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2016",
       category: "Interior",
       features: ["Corporate Design", "Office Fit-out", "Space Planning"],
-      gradient: "from-blue-900 to-amber-700",
-      accentColor: "amber"
+      gradient: "from-blue-500 to-blue-700",
+      accentColor: "blue"
     },
     {
       id: 14,
@@ -225,8 +225,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2015",
       category: "Interior",
       features: ["Hospital Design", "Interior Finishing", "Functional Layout"],
-      gradient: "from-blue-900 to-amber-700",
-      accentColor: "amber"
+      gradient: "from-blue-500 to-blue-700",
+      accentColor: "blue"
     },
     {
       id: 15,
@@ -238,8 +238,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2012",
       category: "Interior",
       features: ["Corporate Office", "Large-scale Planning", "Premium Finishes"],
-      gradient: "from-blue-900 to-amber-700",
-      accentColor: "amber"
+      gradient: "from-blue-500 to-blue-700",
+      accentColor: "blue"
     },
     {
       id: 16,
@@ -251,8 +251,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2013",
       category: "Interior",
       features: ["Office Design", "Premium Finishes", "Space Planning"],
-      gradient: "from-blue-900 to-amber-700",
-      accentColor: "amber"
+      gradient: "from-blue-500 to-blue-700",
+      accentColor: "blue"
     }
   ],
   civil: [
@@ -266,8 +266,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2010-2014",
       category: "Civil",
       features: ["Structural Repair", "Waterproofing", "Polymer Treatment"],
-      gradient: "from-blue-900 to-teal-700",
-      accentColor: "teal"
+      gradient: "from-blue-700 to-blue-900",
+      accentColor: "blue"
     },
     {
       id: 2,
@@ -279,8 +279,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2012",
       category: "Civil",
       features: ["Restoration", "Waterproofing", "Painting"],
-      gradient: "from-blue-900 to-teal-700",
-      accentColor: "teal"
+      gradient: "from-blue-700 to-blue-900",
+      accentColor: "blue"
     },
     {
       id: 3,
@@ -292,8 +292,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2017",
       category: "Civil",
       features: ["Structural Repair", "Polymer Treatment", "Waterproofing"],
-      gradient: "from-blue-900 to-teal-700",
-      accentColor: "teal"
+      gradient: "from-blue-700 to-blue-900",
+      accentColor: "blue"
     },
     {
       id: 4,
@@ -305,8 +305,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2023-24",
       category: "Civil",
       features: ["Structural Work", "Waterproofing", "Repair"],
-      gradient: "from-blue-900 to-teal-700",
-      accentColor: "teal"
+      gradient: "from-blue-700 to-blue-900",
+      accentColor: "blue"
     },
     {
       id: 5,
@@ -318,8 +318,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2024",
       category: "Civil",
       features: ["Structural Work", "Plumbing", "Waterproofing"],
-      gradient: "from-blue-900 to-teal-700",
-      accentColor: "teal"
+      gradient: "from-blue-700 to-blue-900",
+      accentColor: "blue"
     },
     {
       id: 6,
@@ -331,8 +331,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2021-2022",
       category: "Civil",
       features: ["External Repair", "Waterproofing"],
-      gradient: "from-blue-900 to-teal-700",
-      accentColor: "teal"
+      gradient: "from-blue-700 to-blue-900",
+      accentColor: "blue"
     },
     {
       id: 7,
@@ -344,8 +344,8 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2023",
       category: "Civil",
       features: ["Structural Work", "Polymer Treatment", "Repair"],
-      gradient: "from-blue-900 to-teal-700",
-      accentColor: "teal"
+      gradient: "from-blue-700 to-blue-900",
+      accentColor: "blue"
     },
     {
       id: 8,
@@ -357,17 +357,17 @@ const projectsByCategory: ProjectsByCategory = {
       year: "2018",
       category: "Civil",
       features: ["Structural Repair", "Polymer Treatment", "Waterproofing"],
-      gradient: "from-blue-900 to-teal-700",
-      accentColor: "teal"
+      gradient: "from-blue-700 to-blue-900",
+      accentColor: "blue"
     }
   ]
 }
 
 const categories = [
-  { name: "All", gradient: "bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600", textColor: "text-white", borderColor: "border-transparent" },
-  { name: "Exterior", gradient: "bg-gradient-to-r from-blue-900 to-orange-700", textColor: "text-white", borderColor: "border-orange-500" },
-  { name: "Interior", gradient: "bg-gradient-to-r from-blue-900 to-amber-700", textColor: "text-white", borderColor: "border-amber-500" },
-  { name: "Civil", gradient: "bg-gradient-to-r from-blue-900 to-teal-700", textColor: "text-white", borderColor: "border-teal-500" },
+  { name: "All", gradient: "bg-gradient-to-r from-blue-500 to-blue-700", textColor: "text-white", borderColor: "border-transparent" },
+  { name: "Exterior", gradient: "bg-gradient-to-r from-blue-600 to-blue-800", textColor: "text-white", borderColor: "border-blue-400" },
+  { name: "Interior", gradient: "bg-gradient-to-r from-blue-500 to-blue-700", textColor: "text-white", borderColor: "border-blue-300" },
+  { name: "Civil", gradient: "bg-gradient-to-r from-blue-700 to-blue-900", textColor: "text-white", borderColor: "border-blue-500" },
 ]
 
 export default function ProjectsPage() {
@@ -440,23 +440,21 @@ export default function ProjectsPage() {
 
   const getAccentColorClass = (accentColor: string, type: "text" | "border" = "text") => {
     const colorMap: { [key: string]: string } = {
-      teal: type === "text" ? "text-teal-400" : "border-teal-500/30",
-      amber: type === "text" ? "text-amber-400" : "border-amber-500/30",
-      orange: type === "text" ? "text-orange-400" : "border-orange-500/30",
+      blue: type === "text" ? "text-blue-400" : "border-blue-400/30",
     }
     return colorMap[accentColor] || "text-white"
   }
 
   return (
-    <main className="min-h-screen bg-slate-900 text-white">
+    <main className="min-h-screen bg-black text-white">
       <FloatingContact />
 
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 opacity-20" />
         <div className="relative max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-teal-400 via-amber-400 to-orange-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
               Our Projects
             </span>
           </h1>
@@ -478,7 +476,7 @@ export default function ProjectsPage() {
                 className={
                   selectedCategory === category.name
                     ? `${category.gradient} text-white border-2 ${category.borderColor} transform scale-105 transition-all duration-300 shadow-lg`
-                    : `border-2 ${category.borderColor} ${category.textColor} hover:${category.gradient} transition-all duration-300 transform hover:scale-105 bg-slate-800/80 backdrop-blur-sm`
+                    : `border-2 ${category.borderColor} ${category.textColor} hover:${category.gradient} transition-all duration-300 transform hover:scale-105 bg-slate-900/80 backdrop-blur-sm`
                 }
               >
                 {category.name}
@@ -495,7 +493,7 @@ export default function ProjectsPage() {
             {filteredProjects.map((project, index) => (
               <Card
                 key={project.id}
-                className="bg-slate-800/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-500 cursor-pointer group transform hover:scale-105"
+                className="bg-slate-900/80 border-slate-800 backdrop-blur-sm hover:bg-slate-900 transition-all duration-500 cursor-pointer group transform hover:scale-105"
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="relative overflow-hidden rounded-t-lg">
@@ -547,13 +545,13 @@ export default function ProjectsPage() {
       {/* Project Detail Modal */}
       {selectedProject && (
         <div 
-          className={`fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${
+          className={`fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${
             isModalClosing ? "opacity-0" : "opacity-100"
           }`}
           onClick={handleBackdropClick}
         >
           <div 
-            className={`bg-slate-800 border-slate-700 max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-lg transition-transform duration-300 ${
+            className={`bg-slate-900 border-slate-800 max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-lg transition-transform duration-300 ${
               isModalClosing ? "scale-95" : "scale-100"
             }`}
           >
@@ -568,7 +566,7 @@ export default function ProjectsPage() {
               <Button
                 variant="outline"
                 size="sm"
-                className="absolute top-4 right-4 bg-slate-900/80 border-slate-600 hover:bg-slate-800 z-10"
+                className="absolute top-4 right-4 bg-black/80 border-slate-700 hover:bg-slate-800 z-10"
                 onClick={handleCloseModal}
               >
                 <X className="w-4 h-4" />
