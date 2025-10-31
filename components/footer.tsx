@@ -1,5 +1,6 @@
-import { Building2, Phone, Mail, MapPin } from "lucide-react"
+import { Phone, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -9,8 +10,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center">
-                <Building2 className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden bg-white p-1">
+                <Image
+                  src="/logo.jpeg"
+                  alt="HIRA ENTERPRISES Logo"
+                  width={120}
+                  height={120}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="text-xl font-bold text-white font-display">HIRA ENTERPRISES</span>
             </div>

@@ -1,13 +1,12 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Copy } from "lucide-react"
 import FloatingContact from "@/components/floating-contact"
 
 export default function ContactPage() {
@@ -17,18 +16,35 @@ export default function ContactPage() {
     phone: "",
     message: "",
   })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-  }
+  const [copied, setCopied] = useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     })
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    const subject = encodeURIComponent(`New Inquiry from ${formData.name}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
+    )
+
+    // Opens the user's default mail app (Gmail, Outlook, etc.)
+    window.location.href = `mailto:hiraenterprises26@gmail.com?subject=${subject}&body=${body}`
+  }
+
+  const copyToClipboard = async (text: string, type: string) => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied(type)
+      setTimeout(() => setCopied(null), 2000)
+    } catch (err) {
+      console.error('Failed to copy text: ', err)
+    }
   }
 
   return (
@@ -43,7 +59,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Ready to start your project? Get in touch with our team for a consultation
+            Ready to start your project? Get in touch with our team for a consultation.
           </p>
         </div>
       </section>
@@ -52,7 +68,7 @@ export default function ContactPage() {
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
+            {/* Left Column */}
             <div className="space-y-8">
               <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
                 <CardHeader>
@@ -81,26 +97,46 @@ export default function ContactPage() {
                     Phone Numbers
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Button
-                      variant="outline"
-                      className="border-blue-500/30 text-blue-300 hover:bg-blue-500/10"
+                <CardContent className="space-y-4">
+                  <div className="relative group">
+                    <Input
+                      readOnly
+                      value="9223350912"
+                      className="bg-slate-700/50 border-slate-600 text-white pr-10 cursor-pointer hover:border-blue-500/50 transition-colors"
                       onClick={() => window.open("tel:9223350912")}
-                    >
-                      9223350912
-                    </Button>
-                    <span className="text-slate-400">Hira Pehare</span>
+                    />
+                    <div className="absolute right-2 top-1/2 transform -translate-y-1/2">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-6 w-6 p-0 text-slate-400 hover:text-blue-400 hover:bg-blue-500/10"
+                        onClick={() => copyToClipboard("9223350912", "phone1")}
+                        title="Copy number"
+                      >
+                        <Copy className={`h-3 w-3 ${copied === 'phone1' ? 'text-green-400' : ''}`} />
+                      </Button>
+                    </div>
+                    <p className="text-xs text-slate-400 mt-1">Hira Pehare</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Button
-                      variant="outline"
-                      className="border-blue-500/30 text-blue-300 hover:bg-blue-500/10"
+                  <div className="relative group">
+                    <Input
+                      readOnly
+                      value="9223306882"
+                      className="bg-slate-700/50 border-slate-600 text-white pr-10 cursor-pointer hover:border-blue-500/50 transition-colors"
                       onClick={() => window.open("tel:9223306882")}
-                    >
-                      9223306882
-                    </Button>
-                    <span className="text-slate-400">Manoj Pehare</span>
+                    />
+                    <div className="absolute right-2 top-1/2 transform -translate-y-1/2">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-6 w-6 p-0 text-slate-400 hover:text-blue-400 hover:bg-blue-500/10"
+                        onClick={() => copyToClipboard("9223306882", "phone2")}
+                        title="Copy number"
+                      >
+                        <Copy className={`h-3 w-3 ${copied === 'phone2' ? 'text-green-400' : ''}`} />
+                      </Button>
+                    </div>
+                    <p className="text-xs text-slate-400 mt-1">Manoj Pehare</p>
                   </div>
                 </CardContent>
               </Card>
@@ -112,21 +148,45 @@ export default function ContactPage() {
                     Email Addresses
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
-                  <Button
-                    variant="outline"
-                    className="border-blue-500/30 text-blue-300 hover:bg-blue-500/10 w-full justify-start"
-                    onClick={() => window.open("mailto:hiraenterprises26@gmail.com")}
-                  >
-                    hiraenterprises26@gmail.com
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="border-blue-500/30 text-blue-300 hover:bg-blue-500/10 w-full justify-start"
-                    onClick={() => window.open("mailto:hiracons@gmail.com")}
-                  >
-                    hiracons@gmail.com
-                  </Button>
+                <CardContent className="space-y-4">
+                  <div className="relative group">
+                    <Input
+                      readOnly
+                      value="hiraenterprises26@gmail.com"
+                      className="bg-slate-700/50 border-slate-600 text-white pr-10 cursor-pointer hover:border-blue-500/50 transition-colors"
+                      onClick={() => window.open("mailto:hiraenterprises26@gmail.com")}
+                    />
+                    <div className="absolute right-2 top-1/2 transform -translate-y-1/2">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-6 w-6 p-0 text-slate-400 hover:text-blue-400 hover:bg-blue-500/10"
+                        onClick={() => copyToClipboard("hiraenterprises26@gmail.com", "email1")}
+                        title="Copy email"
+                      >
+                        <Copy className={`h-3 w-3 ${copied === 'email1' ? 'text-green-400' : ''}`} />
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="relative group">
+                    <Input
+                      readOnly
+                      value="hiracons@gmail.com"
+                      className="bg-slate-700/50 border-slate-600 text-white pr-10 cursor-pointer hover:border-blue-500/50 transition-colors"
+                      onClick={() => window.open("mailto:hiracons@gmail.com")}
+                    />
+                    <div className="absolute right-2 top-1/2 transform -translate-y-1/2">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-6 w-6 p-0 text-slate-400 hover:text-blue-400 hover:bg-blue-500/10"
+                        onClick={() => copyToClipboard("hiracons@gmail.com", "email2")}
+                        title="Copy email"
+                      >
+                        <Copy className={`h-3 w-3 ${copied === 'email2' ? 'text-green-400' : ''}`} />
+                      </Button>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -163,69 +223,45 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                      Full Name *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                      Email Address *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-slate-300 mb-2">
-                      Phone Number
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
-                      Message *
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
-                      placeholder="Tell us about your project requirements..."
-                    />
-                  </div>
-
+                  <Input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
+                    placeholder="Full Name *"
+                  />
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
+                    placeholder="Email Address *"
+                  />
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
+                    placeholder="Phone Number"
+                  />
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
+                    placeholder="Tell us about your project requirements..."
+                  />
                   <Button
                     type="submit"
                     size="lg"
@@ -246,7 +282,6 @@ export default function ContactPage() {
           <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
             Find Us
           </h2>
-
           <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm overflow-hidden">
             <CardContent className="p-0">
               <div className="w-full h-96 bg-slate-700 flex items-center justify-center">

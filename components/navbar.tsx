@@ -26,15 +26,15 @@ export default function Navbar() {
     <header className="fixed top-0 w-full bg-slate-900/90 backdrop-blur-md z-50 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden bg-white p-1">
+          {/* Logo - Desktop */}
+          <Link href="/" className="flex items-center space-x-4">
+            <div className="w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden bg-white">
               <Image
                 src="/logo.jpeg"
                 alt="HIRA ENTERPRISES"
-                width={40}
-                height={40}
-                className="w-full h-full object-contain"
+                width={160}
+                height={160}
+                className="w-full h-full object-contain p-1"
                 priority
               />
             </div>
@@ -78,14 +78,14 @@ export default function Navbar() {
             <SheetContent side="right" className="bg-slate-900 border-white/10 w-80">
               <div className="flex flex-col space-y-6 mt-8">
                 {/* Mobile Logo */}
-                <div className="flex items-center space-x-3 pb-4 border-b border-white/10">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden bg-white p-1">
+                <div className="flex items-center space-x-4 pb-4 border-b border-white/10">
+                  <div className="w-11 h-11 rounded-lg flex items-center justify-center overflow-hidden bg-white">
                     <Image
                       src="/logo.jpeg"
                       alt="HIRA ENTERPRISES"
-                      width={40}
-                      height={40}
-                      className="w-full h-full object-contain"
+                      width={140}
+                      height={140}
+                      className="w-full h-full object-contain p-1"
                     />
                   </div>
                   <div className="flex flex-col">
